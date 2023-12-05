@@ -1,40 +1,4 @@
--- To show existing databases
-SHOW databases;
-
--- creating a new databases
-CREATE DATABASE soap;
-CREATE database data;
-
--- Deleting a database
-DROP database soap;
-
--- INtializing a DATABASE
-USE data;
---TO see in which database I am working
-SELECT database();
-CREATE DATABASE soap;
-select database();
-
 use data;
--- To create a table 
-CREATE Table student(
-    Name VARCHAR(100),
-    RollNo VARCHAR(100),
-    Place VARCHAR(100)
-);
--- To describe the structure of the TABLE
-show columns from student;
-DESC student;
--- To DELETE a table
-DROP TABLE STUDENT;
-CREATE TABLE pastries(
-    Name VARCHAR(20),
-    QNT INT
-    );
-SHOW COLUMNS FROM pastries;
--- tO DELETE THE
-DROP TABLE PASTRIES;
-
 INSERT into student(Name,RollNo,place) values("Abhi",1,"Bengaluru");
 INSERT into student(Name,RollNo,place) values("Anu",2,"Mysore");
 INSERT into student(RollNo,Name,place) values(3,"Adi","Bengaluru");
@@ -44,7 +8,6 @@ INSERT INTO STUDENT(RollNo,Name,place)  values(4,"Bharat","Udupi"),
                                         (5,"Chinmay","Mysore"),
                                         (6,"Chirag","Tumkur");
 select *from Student;
-
 
 -- Exercise
 CREATE TABLE people(first_name VARCHAR(20),last_name VARCHAR(20),age int);
@@ -99,3 +62,23 @@ INSERT INTO cats4(catid,name,age) VALUES(1,"Bob",3),
             
 SELECT *FROM cats4;
 DESC cats4;
+
+-- Working with AUTO_INCREMENT
+CREATE TABLE cats5(cat_id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(20),age INT);
+DESC cats5;
+INSERT INTO cats5(name,age) VALUES("Bob",3),("Ash",2),("Tim",5);
+SELECT *FROM cats5;
+
+CREATE TABLE employee1(id INT AUTO_INCREMENT PRIMARY KEY,
+            first_name VARCHAR(100) NOT NULL, 
+            last_name VARCHAR(100) NOT NULL,
+            middle_name VARCHAR(100),
+            age INT NOT NULL,
+            current_status VARCHAR(100) NOT NULL DEFAULT 'employed');
+
+DESC employee1;
+
+INSERT INTO employee1(first_name,last_name,age,current_status) VALUES("Bob","Belcher",35,"employed");
+SELECT *FROM employee1;
+INSERT INTO employee1(first_name,last_name,age) VALUES("Bob","Belcher",35);
+SELECT *FROM employee1;
