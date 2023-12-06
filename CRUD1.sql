@@ -1,4 +1,5 @@
 -- CRUD - CREATE READ UPDATE DELETE
+USE data;
 SHOW TABLES;
 -- Create the new cats table:
 CREATE TABLE cats (
@@ -26,7 +27,7 @@ SELECT *FROM cats;
 SELECT name FROM cats;
 -- TO GET ONLY age COLUMN;
 SELECT age FROM cats;
--- TO GET BOTH name and age COLUMN;
+-- TO GET BOTH name and breed COLUMN;
 SELECT name,breed FROM cats;
 -- Use where to specify a condition:
 SELECT *FROM cats WHERE age=4;
@@ -39,6 +40,32 @@ SELECT *FROM cats WHERE age=4 OR breed="Tabby";
 SELECT *FROM cats WHERE NOT breed="Tabby";
 -- Use LIMIT to specify the number of rows to return:
 
+-- EXERCISES
+SELECT cat_id from cats;
+SELECT name,breed from cats;
+SELECT name,age from cats WHERE breed="Tabby";
+SELECT cat_id,age from cats where age=cat_id;
+-- Use 'AS' to alias a column in your results (it doesn't actually change the name of the column in the table)
+SELECT cat_id AS id  from cats;
+
+--Updating Data
+UPDATE cats SET breed="pom" where name="Ringo";
+SELECT *FROM cats;
+UPDATE cats  SET name="Harry" where age=11;
+UPDATE cats SET age=8 WHERE name="Jackson";
+UPDATE cats SET name='Jack' WHERE name='Jackson';
+UPDATE cats SET breed="British Shorthair" WHERE name='Ringo';
+UPDATE cats SET age=12 WHERE breed="Maine Coon";
+DELETE FROM cats WHERE name="Egg";
+
+SELECT *FROM employee1;
+DELETE FROM employee1 WHERE id=1;
+DELETE from employee1;
+SELECT *FROM cats;
+UPDATE cats set age=7 WHERE name='Jack';
+DELETE FROM cats where age=4;
+DELETE FROM cats where age=cat_id;
+DELETE from cats;
 
 
 
