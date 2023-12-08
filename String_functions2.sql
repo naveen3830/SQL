@@ -9,4 +9,3 @@ SELECT REVERSE(author_lname) FROM books;
 SELECT CHAR_LENGTH("HELLO");
 SELECT LENGTH("HELLO");
 SELECT CHAR_LENGTH(title), title from books;
-
