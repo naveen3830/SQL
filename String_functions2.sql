@@ -9,3 +9,13 @@ SELECT REVERSE(author_lname) FROM books;
 SELECT CHAR_LENGTH("HELLO");
 SELECT LENGTH("HELLO");
 SELECT CHAR_LENGTH(title), title from books;
+
+-- UPPER AND LOWER CASE;
+
+SELECT UPPER('hello');
+SELECT LOWER('NAVeEN'); 
+
+SELECT UPPER(title) FROM books;
+
+SELECT CONCAT('I Love ',upper(title),' !!!') FROM books;
+
