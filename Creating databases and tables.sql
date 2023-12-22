@@ -7,8 +7,9 @@ CREATE database data;
 -- Deleting a database
 DROP database soap;
 
--- INtializing a DATABASE
+-- Initializing a DATABASE
 USE data;
+
 --TO see in which database I am working
 SELECT database();
 CREATE DATABASE soap;

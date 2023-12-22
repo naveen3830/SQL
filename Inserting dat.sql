@@ -35,12 +35,12 @@ INSERT INTO people2(age) values(35);
 INSERT INTO people2() values();
 INSERT INTO people2(Name,age) values(NULL,NULL);
 SELECT *FROM people2;
+DROP table people1;
 -- Creating table with Not null and default values
 CREATE TABLE cats4 (    
     name VARCHAR(20) NOT NULL DEFAULT 'unnamed',    
     age INT NOT NULL DEFAULT 99 
 );
-
 INSERT INTO cats4(age) values(5);
 INSERT INTO cats4(name,age) values("Helis",6);
 SELECT *FROM cats4;
@@ -62,7 +62,6 @@ INSERT INTO cats4(catid,name,age) VALUES(1,"Bob",3),
             
 SELECT *FROM cats4;
 DESC cats4;
-
 -- Working with AUTO_INCREMENT
 CREATE TABLE cats5(cat_id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(20),age INT);
 DESC cats5;
