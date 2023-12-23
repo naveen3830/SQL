@@ -8,16 +8,15 @@ INSERT INTO STUDENT(RollNo,Name,place)  values(4,"Bharat","Udupi"),
                                         (5,"Chinmay","Mysore"),
                                         (6,"Chirag","Tumkur");
 select *from Student;
-
 -- Exercise
 CREATE TABLE people(first_name VARCHAR(20),last_name VARCHAR(20),age int);
-show columns from people;
+SHOW COLUMNS FROM people;
 DESC people;
 INSERT INTO people(first_name,last_name,age) values("Tina","Belcher",13);
 INSERT INTO people(first_name,last_name,age) values("BOb","Belcher",42),
-                                                    ("Linda","Belcher",45),
-                                                    ("Phillip","Frond",38),
-                                                    ("Calvin","Fischoeder",70);
+("Linda","Belcher",45),
+("Phillip","Frond",38),
+("Calvin","Fischoeder",70);
 SELECT *FROM people;
 
 INSERT INTO people(first_name,age) values("Tina",13);
