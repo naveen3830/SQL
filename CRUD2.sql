@@ -1,3 +1,4 @@
+-- Exercises
 CREATE DATABASE shirts_db;
 USE shirts_db;
 CREATE TABLE shirts(shirt_id int AUTO_INCREMENT, 
@@ -31,7 +32,6 @@ DELETE FROM shirts where last_worn=200;
 DELETE FROM shirts where article="tank top";
 DELETE FROM shirts;
 DROP table shirts;
-
 SELECT DATABASE();
 
 

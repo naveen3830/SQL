@@ -55,10 +55,11 @@ UPDATE cats SET age=8 WHERE name="Jackson";
 UPDATE cats SET name='Jack' WHERE name='Jackson';
 UPDATE cats SET breed="British Shorthair" WHERE name='Ringo';
 UPDATE cats SET age=12 WHERE breed="Maine Coon";
-DELETE FROM cats WHERE name="Egg";
-
 SELECT *FROM employee1;
-DELETE FROM employee1 WHERE id=1;
+
+-- Deleting data from the table
+DELETE FROM employee1 WHERE id=1; 
+DELETE FROM cats WHERE name="Egg";
 DELETE from employee1;
 SELECT *FROM cats;
 UPDATE cats set age=7 WHERE name='Jack';

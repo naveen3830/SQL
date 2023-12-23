@@ -1,7 +1,5 @@
 CREATE DATABASE books;
-
 USE books;
-
 CREATE TABLE
     books (
         book_id INT NOT NULL AUTO_INCREMENT,
@@ -58,6 +56,7 @@ FROM books;
 
 -- SUBSTRING or SUBSTR FUNCTION
 SELECT SUBSTRING("hello", 1, 2)
+
 SELECT SUBSTRING("Hello World", 2, 5);
 SELECT SUBSTRING('Hello World', 4);
 SELECT SUBSTRING('Hello World', -1);
