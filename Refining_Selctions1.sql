@@ -1,3 +1,4 @@
+-- More Functions to Refine our Selections
 USE books;
 INSERT INTO books
     (title, author_fname, author_lname, released_year, stock_quantity, pages)
@@ -43,13 +44,16 @@ SELECT *FROM books LIMIT 5,15;
 -- LIKE function
 SELECT title,author_fname,author_lname FROM books WHERE author_lname like '%da%';
 SELECT title FROM books WHERE title LIKE '%:%';           
-
 SELECT *FROM books WHERE author_fname LIKE '_____';
 SELECT *FROM books WHERE author_lname LIKE '%_n%';
 SELECT *FROM books where title LIKE '%\%%';
 SELECT *FROM books;
+
 -- EXCERCISES;
+SELECT title FROM books WHERE title LIKE '%stories%';
 SELECT title,pages  FROM books ORDER BY pages DESC LIMIT 1;
 SELECT CONCAT(title,'-',released_year ) AS summary FROM books ORDER BY released_year DESC LIMIT 3;
 SELECT title,author_lname FROM books WHERE author_lname LIKE '% %';
-SELECT title,released_year,stock_quantity FROM books ORDER BY stock_quantity LIMIT 3;
+SELECT title,released_year,stock_quantity FROM books ORDER BY stock_quantity,released_year LIMIT 3;
+SELECT title,author_lname from books ORDER BY 2,1;
+SELECT CONCAT("My favourite author is"," ",UPPER(author_fname)," ",UPPER(author_lname)) AS yell from books ORDER BY author_fname;
