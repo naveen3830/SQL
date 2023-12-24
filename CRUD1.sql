@@ -66,7 +66,3 @@ UPDATE cats set age=7 WHERE name='Jack';
 DELETE FROM cats where age=4;
 DELETE FROM cats where age=cat_id;
 DELETE from cats;
-
-
-
-

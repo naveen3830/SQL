@@ -32,6 +32,7 @@ SELECT MIN(released_year) FROM books;
 SELECT title,pages FROM books ORDER BY pages DESC LIMIT 1;
 SELECT title,pages FROM books ORDER BY pages LIMIT 3;
 INSERT INTO books(title,pages) VALUES("MY life",634);
+
 -- SUBQUERIES IN SQL
 SELECT title,pages FROM books
 WHERE pages=(SELECT MIN(pages) FROM books);
@@ -42,9 +43,5 @@ WHERE pages=(SELECT MAX(pages) FROM books);
 SELECT title,released_year FROM books
 WHERE released_year=(SELECT MAX(released_year) FROM books);
 
-SELECT author_fname,author_fname,COUNT(*) from books GROUP BY author_fname,author_lname;
-
+SELECT author_fname,author_Lname,COUNT(*) from books GROUP BY author_fname,author_lname ORDER BY author_fname DESC;
 SELECT CONCAT(author_fname,' ',author_lname) AS author,count(*) FROM books GROUP BY author;
-
-SELECT author_lname,MIN(released_year),MAX(released_year) FROM books GROUP BY author_lname;
-SELECT author_fname,MAX(released_year),MIN(released_year) FROM books GROUP BY author_fname;
