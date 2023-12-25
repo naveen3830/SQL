@@ -1,0 +1,15 @@
+USE data;
+SELECT *FROM hr_table;
+SELECT COUNT(*) AS Number_of_rows FROM hr_table;
+SELECT AVG(Age) AS Average_age FROM hr_table;
+SELECT Department, COUNT(*) AS TotalEmployees FROM hr_table GROUP BY Department ORDER BY TotalEmployees;
+SELECT Attrition, COUNT(*) AS Total FROM hr_table GROUP BY Attrition;
+SELECT Attrition, Department, COUNT(*) AS Total FROM hr_table GROUP BY Attrition, Department ORDER BY Department;
+SELECT EducationField, COUNT(*) AS Total FROM hr_table GROUP BY EducationField ORDER BY Total;
+SELECT Gender, COUNT(*) AS Total FROM hr_table GROUP BY Gender;
+SELECT Gender, Department, COUNT(*) AS Total FROM hr_table GROUP BY Gender, Department ORDER BY Department;
+SELECT Department, AVG(MonthlyIncome) AS AvgMonthlyIncome FROM hr_table GROUP BY Department;
+SELECT MaritalStatus, Gender, COUNT(*) AS Total FROM hr_table GROUP BY MaritalStatus, Gender ORDER BY Gender;
+SELECT Department, MaritalStatus, COUNT(*) AS Total FROM hr_table GROUP BY Department, MaritalStatus ORDER BY Department;
+SELECT Department, OverTime, COUNT(*) AS Total FROM hr_table GROUP BY OverTime, Department ORDER BY Department;
+SELECT JobRole, Department, COUNT(*) AS Total FROM hr_table GROUP BY JobRole, Department;
