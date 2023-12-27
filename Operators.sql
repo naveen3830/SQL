@@ -38,3 +38,20 @@ SELECT title,released_year FROM books WHERE released_year BETWEEN 2004 AND 2014;
 SELECT title,released_year FROM books where released_year BETWEEN 1900 AND 2000;
 
 SELECT title,released_year FROM books where released_year NOT BETWEEN 2004 AND 2014;
+CREATE TABLE Person (
+    person_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    birthdate DATE,
+    birthtime TIME,
+    birthdt DATETIME
+);
+DROP table person;
+INSERT INTO Person (name, birthdate, birthtime, birthdt) VALUES
+('John Doe', '1990-05-15', '12:30:00', '1990-05-15 12:30:00'),
+('Jane Smith', '1985-08-20', '08:45:00', '1985-08-20 08:45:00'),
+('Bob Johnson', '2000-11-10', '18:15:00', '2000-11-10 18:15:00');
+SELECT *FROM person;
+SELECT *FROM person WHERE YEAR(birthdate)<2000;
+SELECT *FROM person WHERE birthtime > '9:00:00';
+SELECT *FRom person WHERE hour(birthtime) >9;
+SELECT *FROM person WHERE birthtime BETWEEN CAST('12:00:00' AS TIME) AND  CAST('16:00:00' AS TIME);
