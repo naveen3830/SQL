@@ -1,5 +1,4 @@
 Use data;
-
 -- UNIQUE FUNCTION
 CREATE TABLE contacts(name VARCHAR(20) NOT NULL,phone varchar(20) NOT NULL UNIQUE);
 INSERT INTO contacts(name,phone) values('Bob','9876524271');
@@ -18,7 +17,7 @@ INSERT INTO users1(name,age) VALUES('Bob',4);
 INSERT INTO users1(name,age) VALUES('Tom',19);
 SELECT *FROM users1;
 
--- MULTICOLUMN CONSTRAINTS
+-- MULTI COLUMN CONSTRAINTS
 CREATE TABLE users2(name VARCHAR(50) NOT NULL, address VARCHAR(50) NOT NULL,CONSTRAINT name_addresss UNIQUE(name,address));
 INSERT INTO users2(name,address) VALUES('IBM','232 banglore');
 INSERT INTO users2(name,address) VALUES('IBM', '750 banglore');
@@ -51,7 +50,6 @@ ALTER TABLE details RENAME TO users;
 ALTER TABLE users1 RENAME TO details1;
 ALTER TABLE details1 RENAME TO users1;
 show tables;
-
 
 -- TO RENAME THE COLUMN NAME
 DESC employee1;
