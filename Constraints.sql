@@ -1,4 +1,5 @@
 Use data;
+
 -- UNIQUE FUNCTION
 CREATE TABLE contacts(name VARCHAR(20) NOT NULL,phone varchar(20) NOT NULL UNIQUE);
 INSERT INTO contacts(name,phone) values('Bob','9876524271');
