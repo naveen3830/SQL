@@ -1,0 +1,88 @@
+Use data;
+
+-- UNIQUE FUNCTION
+CREATE TABLE contacts(name VARCHAR(20) NOT NULL,phone varchar(20) NOT NULL UNIQUE);
+INSERT INTO contacts(name,phone) values('Bob','9876524271');
+INSERT INTO contacts(name,phone) values('Bob1','9876524207');
+SELECT *FROM contacts;
+
+-- CHECK FUNCTION
+CREATE TABLE users(name VARCHAR(20),age INT check(age>18));
+INSERT INTO users(name,age) VALUES('Bob',19);
+INSERT INTO users(name,age) VALUES('Bob',15);
+SELECT *FROM users;
+
+-- CONSTRAINTS
+CREATE TABLE users1(name VARCHAR(20),age INT, CONSTRAINT age_not_18 CHECK(age>18));
+INSERT INTO users1(name,age) VALUES('Bob',4);
+INSERT INTO users1(name,age) VALUES('Tom',19);
+SELECT *FROM users1;
+
+-- MULTICOLUMN CONSTRAINTS
+CREATE TABLE users2(name VARCHAR(50) NOT NULL, address VARCHAR(50) NOT NULL,CONSTRAINT name_addresss UNIQUE(name,address));
+INSERT INTO users2(name,address) VALUES('IBM','232 banglore');
+INSERT INTO users2(name,address) VALUES('IBM', '750 banglore');
+
+-- ALTER TABLE SYNTAX
+
+-- TO ADD A COLUMN TO THE COLUMN
+ALTER TABLE users2 ADD COLUMN city VARCHAR(50);
+SELECT *FROM users2;
+ALTER TABLE users2 ADD COLUMN employee_count1 INT NOT NULL;
+DESC users2;
+ALTER TABLE users1 ADD COLUMN  Gender VARCHAR(20);
+SELECT *FROM users1;
+DESC users1;
+ALTER TABLE users ADD COLUMN Gender VARCHAR(20) NOT NULL;
+ALTER TABLE users ADD COLUMN Gender1 VARCHAR(20) DEFAULT 'Male';
+SELECT *FROM users;
+
+-- TO DROP THE COLUMN FROM THE TABLE
+ALTER TABLE users DROP COLUMN Gender;
+ALTER TABLE users2 DROP COLUMN cityt;
+ALTER TABLE users2 DROP COLUMN city;
+ALTER TABLE users2 DROP COLUMN employee_count1;
+ALTER TABLE users DROP COLUMN Gender1;
+
+-- TO RENAME THE TABLE NAME;
+RENAME TABLE users TO details;
+SELECT *FROM details;
+ALTER TABLE details RENAME TO users;
+ALTER TABLE users1 RENAME TO details1;
+ALTER TABLE details1 RENAME TO users1;
+show tables;
+
+
+-- TO RENAME THE COLUMN NAME
+DESC employee1;
+ALTER TABLE users RENAME COLUMN Gender1 TO Gender;
+ALTER TABLE users2 RENAME COLUMN employee_count TO EmployeeCount;
+ALTER TABLE employee1 RENAME COLUMN current_status TO CurrentStatus;
+ALTER TABLE employee1 RENAME COLUMN first_name TO FirstName;
+ALTER TABLE employee1 RENAME COLUMN last_name TO LastName;
+ALTER TABLE employee1 RENAME COLUMN middle_name TO MiddleName;
+ALTER TABLE people RENAME COLUMN first_name TO FirstName;
+ALTER TABLE people RENAME COLUMN last_name TO LastName;
+
+-- TO MODIFY THE DATATYPE OF THE COLUMN
+ALTER TABLE employee1 MODIFY MiddleName VARCHAR(50);
+DESC people;
+ALTER TABLE cats5 MODIFY age DECIMAL(3,2);
+ALTER TABLE people MODIFY first_name VARCHAR(50);
+ALTER TABLE people MODIFY last_name VARCHAR(50);
+
+-- TO RENAME COLUMN AND CHANGE THE DATATYPE
+DESC student;
+SELECT *FROM student;
+ALTER TABLE people CHANGE age AGE BIGINT;
+ALTER TABLE student CHANGE RollNO Rollno int;
+ALTER TABLE student CHANGE Place place VARCHAR(50);
+ALTER TABLE student CHANGE place Place VARCHAR(50);
+
+-- ADDING,DROPPING CONSTRAINT TO THE COLUMN
+DESC people;
+SELECT *FROM people;
+ALTER TABLE people ADD CONSTRAINT AGE CHECK (AGE>10);
+ALTER TABLE student ADD CONSTRAINT Rollno CHECK(ROllno>0);
+ALTER TABLE people DROP CONSTRAINT AGE;
+ALTER TABLE student DROP CONSTRAINT ROllno;
