@@ -57,5 +57,15 @@ LEFT JOIN papers ON students.id=papers.student_id;
 SELECT name,IFNULL(title,'MISSING'),IFNULL(grade,0) FROM students
 LEFT JOIN papers ON students.id=papers.student_id;
 
-SELECT name,ROUND(IFNULL(avg(grade),0),0) AS average FROM students
-LEFT JOIN papers ON students.id=papers.student_id GROUP BY name;
+SELECT name,IFNULL(avg(grade),0) AS average FROM students
+LEFT JOIN papers ON students.id=papers.student_id GROUP BY name ORDER BY average DESC;
+SELECT name,IFNULL(avg(grade),0) AS average,
+CASE
+WHEN IFNULL(avg(grade),0)>=75 THEN 'passing'
+ELSE 'failing'
+END AS passing_status
+FROM students
+LEFT JOIN papers ON students.id=papers.student_id
+GROUP BY name 
+ORDER BY average DESC;
+
