@@ -44,3 +44,34 @@ SELECT *FROM orders;
 SELECT id from customers where last_name='George';
 SELECT *FROM orders where customer_id=1;
 SELECT *FROM orders where customer_id=(SELECT id from customers where last_name='George');
+
+-- To perform a (kind of useless) cross(cartesian) join:
+SELECT *FROM customers,orders;
+
+-- TO PERFORM INNER JOIN
+SELECT *FROM customers
+INNER JOIN orders ON customers.id=orders.customer_id;
+
+SELECT first_name,last_name,amount from customers
+INNER JOIN orders ON customers.id=orders.customer_id;
+
+SELECT customers.id,first_name,customer_id from customers
+INNER join orders ON customers.id=orders.customer_id;
+
+SELECT first_name,last_name,sum(amount) as total FROM customers
+INNER JOIN orders ON customers.id=orders.customer_id
+GROUP BY first_name,last_name ORDER BY total;
+
+-- TO PERFORM LEFT JOIN
+SELECT first_name,last_name,amount as total from customers
+LEFT JOIN orders ON customers.id=orders.customer_id;
+
+SELECT first_name,last_name,sum(amount) as total from customers
+LEFT JOIN orders ON customers.id=orders.customer_id GROUP BY first_name,last_name;
+
+SELECT order_date,amount,first_name,last_name from orders
+LEFT JOIN customers ON customers.id=orders.customer_id;
+
+-- USE OF ISNULL() FUNCTION
+SELECT first_name,last_name,IFNULL(SUM(amount),0) as total from customers
+LEFT JOIN orders ON customers.id=orders.customer_id GROUP BY first_name,last_name;
