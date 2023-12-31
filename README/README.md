@@ -14,7 +14,7 @@ Welcome to my SQL Learning Repository! This repository is dedicated to storing m
 
 ## Introduction 🌐
 
-This repository serves as a comprehensive record of my journey in learning SQL. Here, you will find code snippets, examples, and resources related to various SQL topics.
+This repository serves as a comprehensive record of my journey in learning SQL. You will find code snippets, examples, and resources related to various SQL topics here.
 
 ## Getting Started 🚀
 
@@ -42,7 +42,7 @@ The repository is organized as follows:
   - `code_file_3.sql`: Explanation or purpose of the code.
   - `code_file_4.sql`: Explanation or purpose of the code.
 
-Feel free to add, modify, or reorganize the structure based on your needs.
+Please feel free to add, modify, or reorganize the structure based on what you need.
 
 ## SQL Topics 📊
 
@@ -56,12 +56,12 @@ Explore the following SQL topics covered in this repository:
 Here are some additional resources that might be helpful:
 
 - [SQL Documentation](https://dev.mysql.com/doc/)
-- [Online SQL Courses](https://www.example.com)
+- [Online SQL Courses](https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/)
 
 ## Contributing 🤝
 
-If you find any issues, errors, or want to contribute to this repository, feel free to open an issue or create a pull request. Your contributions are highly appreciated.
+If you find any issues, or errors, or want to contribute to this repository, feel free to open an issue or create a pull request. Your contributions are highly appreciated.
 
 ## License 📄
 
-This SQL Learning Repository is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the content as per the terms of the license.
+This SQL Learning Repository is licensed under the [MIT License](LICENSE). Please feel free to use, modify, and distribute the content according to the terms of the license.
