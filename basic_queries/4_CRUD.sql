@@ -33,6 +33,3 @@ DELETE FROM shirts where article="tank top";
 DELETE FROM shirts;
 DROP table shirts;
 SELECT DATABASE();
-
-
-
