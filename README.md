@@ -5,7 +5,7 @@ Welcome to my SQL Learning Repository! This repository is dedicated to storing m
 ## Table of Contents 📋
 
 - [Introduction](#introduction-)
-- [Getting Started](#Detting-Started)
+- [Getting Started](#getting-started)
 - [Folder Structure](#folder-structure)
 - [SQL Topics](#sql-topics)
 - [Resources](#resources)
