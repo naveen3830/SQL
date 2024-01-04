@@ -98,6 +98,6 @@ SELECT
     IF(COUNT(rating)>0,'ACTIVE','INACTIVE') AS STATUS
 FROM reviewers LEFT JOIN reviews ON reviews.reviewer_id=reviewers.id GROUP BY first_name,last_name;
 
-SELECT title,rating,CONCAT(first_name,' ',last_name) from reviews 
+SELECT title,rating,CONCAT(first_name,' ',last_name) AS name from reviews 
 INNER JOIN series ON reviews.series_id=series.id
-INNER JOIN reviewers ON reviews.series_id=reviewers.id
+INNER JOIN reviewers ON reviews.series_id=reviewers.id;
