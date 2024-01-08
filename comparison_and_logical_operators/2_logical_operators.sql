@@ -1,7 +1,7 @@
 USE books;
 SELECT *FROM books;
 -- IN, NOT IN OPERATOR;
-SELECT *FROM booksWHERE author_lname='Lahiri' OR author_lname='Carver';
+SELECT *FROM books WHERE author_lname='Lahiri' OR author_lname='Carver';
 SELECT *FROM books WHERE author_lname IN ('Lahiri','Carver');
 SELECT title,released_year from books WHERE released_year IN (2003,2000);
 SELECT title,author_lname FROM books where author_lname NOT IN ('Lahiri,Carver','Eggers');
