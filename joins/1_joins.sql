@@ -72,6 +72,7 @@ LEFT JOIN orders ON customers.id=orders.customer_id GROUP BY first_name,last_nam
 SELECT order_date,amount,first_name,last_name from orders
 LEFT JOIN customers ON customers.id=orders.customer_id;
 
+
 -- USE OF IFNULL() FUNCTION
 SELECT first_name,last_name,IFNULL(SUM(amount),0) as total from customers
 LEFT JOIN orders ON customers.id=orders.customer_id GROUP BY first_name,last_name;
