@@ -30,3 +30,33 @@ SELECT(SELECT COUNT(*) FROM photos)/(SELECT COUNT(*) FROM users) AS avg_posts;
 SELECT tag_name,count(*) AS total from tags
 INNER join photo_tags on photo_tags.tag_id=tags.id GROUP BY tag_name ORDER BY total DESC LIMIT 5;
 
+-- User Engagement Analysis:
+-- Calculate Average Likes and Comments per User
+SELECT
+    user_id,
+    AVG((SELECT COUNT(*) FROM Likes WHERE Likes.user_id = Photos.user_id)) AS avg_likes,
+    AVG((SELECT COUNT(*) FROM Comments WHERE Comments.user_id = Photos.user_id)) AS avg_comments
+FROM
+    Photos
+GROUP BY
+    user_id;
+
+-- Trending Tags:
+-- Identify Top Trending Tags in the Last 24 Hours
+SELECT
+    Tags.tag_name,
+    COUNT(*) AS tag_count
+FROM
+    Tags
+INNER JOIN
+    Photo_Tags ON Tags.tag_id = Photo_Tags.tag_id
+INNER JOIN
+    Photos ON Photo_Tags.photo_id = Photos.photo_id
+WHERE
+    Photos.created_at >= NOW() - INTERVAL 1 DAY
+GROUP BY
+    Tags.tag_name
+ORDER BY
+    tag_count DESC
+LIMIT 10;
+
