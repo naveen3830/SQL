@@ -41,22 +41,55 @@ FROM
 GROUP BY
     user_id;
 
--- Trending Tags:
--- Identify Top Trending Tags in the Last 24 Hours
+-- User Activity Tracking:
+--Retrieve Comprehensive User Activity
+-- 
 SELECT
-    Tags.tag_name,
-    COUNT(*) AS tag_count
+    Photos.*,
+    Likes.created_at AS like_date,
+    Comments.comment_text,
+    Comments.created_at AS comment_date
 FROM
-    Tags
-INNER JOIN
-    Photo_Tags ON Tags.tag_id = Photo_Tags.tag_id
-INNER JOIN
-    Photos ON Photo_Tags.photo_id = Photos.photo_id
+    Users
+LEFT JOIN
+    Photos ON Users.id = Photos.user_id
+LEFT JOIN
+    Likes ON Users.id = Likes.user_id
+LEFT JOIN
+    Comments ON Users.id = Comments.user_id
 WHERE
-    Photos.created_at >= NOW() - INTERVAL 1 DAY
+    Users.id = 1  -- Replace with the actual user ID
+ORDER BY
+    COALESCE(Photos.created_at, Likes.created_at, Comments.created_at) DESC;
+
+
+-- Inactive User Identification:
+-- Identify Users Inactive for the Last 30 Days
+
+-- Hashtag tracking and trend analysis
+SELECT
+    tag_name,
+    COUNT(photo_id) AS tag_count
+FROM
+    tags
+LEFT JOIN
+    photo_tags ON tags.id = photo_tags.tag_id
 GROUP BY
-    Tags.tag_name
+    tag_name
 ORDER BY
     tag_count DESC
 LIMIT 10;
+
+-- Explore Page Optimization:
+SELECT
+    *
+FROM
+    Photos
+ORDER BY
+    RAND()
+LIMIT 20;
+
+
+
+
 
